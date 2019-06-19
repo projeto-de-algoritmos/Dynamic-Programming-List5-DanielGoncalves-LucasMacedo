@@ -75,21 +75,29 @@ def find_solution(matrix, sequence_a, sequence_b):
 def print_solution(matrix, sequence_a, sequence_b):
 
     print("  " + GAP_CHARACTER, end=' ')
+    result = '  ' + GAP_CHARACTER + ' '
 
     for i in range(len(sequence_b)):
         print(sequence_b[i], end=' ')
+        result += str(sequence_b[i]) + ' '
 
     print()
+    result += "\n"
 
     for i in range(0, len(matrix)):
         if i == 0:
             print(GAP_CHARACTER, end=' ')
+            result += GAP_CHARACTER + ' '
         else:
             print(sequence_a[i - 1], end=' ')
+            result += str(sequence_a[i - 1]) + ' '
         for j in range(0, len(matrix[0])):
                 print(matrix[i][j], end=' ')
+                result += str(matrix[i][j]) + ' '
         print()
+        result += "\n"
 
+    return result
 
 if __name__ == '__main__':
     line_sequence = str(input("Line Sequence: "))
